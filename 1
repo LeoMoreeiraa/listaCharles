@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int Fatorial(int f) {
+    int resultado = 1;
+    if (f== 0 || f == 1) {
+        return 1;
+    }
+    for (int i = 2; i <= f; i++) {
+        resultado = resultado * i;
+    }
+    return resultado;
+}
+int SomaFat(int n, int V[]){
+    int S[n];
+    int soma = 0;
+    int i,j =0; 
+    while(V[i]!=0 && soma<n){
+        if(soma + Fatorial(V[i])<=n){
+            soma=soma+Fatorial(V[i]);
+            S[j]=V[i];
+            j++;
+        }else{
+            i++;
+        }
+    }
+    return j;
+}
+int main() {
+    int V[11]={10,9,8,7,6,5,4,3,2,1,0};
+    int n = 25;
+    int fat = SomaFat(n,V);
+    printf("Fatorial de %d = %d\n", n, fat);
+
+    return 0;
+}
