@@ -1,0 +1,20 @@
+#include <stdio.h>
+int seq(int V[], int n){
+    int soma=0;
+    int melhorsoma=0;
+    int i= 0;
+    while(i<n){
+        soma=soma+V[i];
+        if(soma>melhorsoma){
+            melhorsoma=soma;
+            
+        }
+        if(soma<0){
+            soma=0;
+            
+        }
+        i++;
+        
+    }
+    return melhorsoma;
+}
