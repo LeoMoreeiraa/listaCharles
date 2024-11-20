@@ -1,0 +1,12 @@
+#include <stdio.h>
+int Reserva(int s[],int c[],int n){
+  int A=0;
+  int i =1;
+  for(int j =2;j<n;j++){
+      if(s[j]>c[i]){
+          A=A+1;
+          i=j;
+      }
+  }
+  return A;
+}
